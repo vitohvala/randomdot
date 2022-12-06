@@ -10,15 +10,15 @@ s= ;
 [ $bat_state = "Charging"  ] && printf "$s  " 
 
 
-if [ $bat_perc>95 ] ; then
+if [ $bat_perc -gt 95 ] ; then
 		echo 
-elif [ $bat_perc>65 ] && [ $bat_perc<=95 ] 
+elif [ $bat_perc \> 65 ] && [ $bat_perc \< 95 ] 
 then 
 		echo 
-elif [ $bat_perc>40 ] && [ $bat_perc<=65 ] 
+elif [ $bat_perc \> 40 ] && [ $bat_perc \< 66 ] 
 then 
 		echo 
-elif [ $bat_perc>25 ] && [ $bat_perc<=40 ] 
+elif [ $bat_perc \> 25 ] && [ $bat_perc \< 40 ] 
 then 
 		echo 
 else echo 
