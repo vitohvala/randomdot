@@ -12,7 +12,7 @@ s= ;
 
 if [ $bat_perc -gt 95 ] ; then
 		echo 
-elif [ $bat_perc \> 65 ] && [ $bat_perc \< 95 ] 
+elif [ $bat_perc \> 65 ] && [ $bat_perc \< 96 ] 
 then 
 		echo 
 elif [ $bat_perc \> 40 ] && [ $bat_perc \< 66 ] 
