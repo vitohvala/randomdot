@@ -17,7 +17,7 @@ then
 		echo 
 elif [ $bat_perc \> 40 ] && [ $bat_perc \< 66 ] 
 then 
-		echo 
+		echo 
 elif [ $bat_perc \> 25 ] && [ $bat_perc \< 41 ] 
 then 
 		echo 
