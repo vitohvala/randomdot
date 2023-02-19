@@ -6,5 +6,5 @@ if [ "$1" = "+" ] ; then
   else
 	    val=`expr $val - 15`
 fi
-echo $val | sudo tee /sys/class/backlight/intel_backlight/brightness
+#echo $val | sudo tee /sys/class/backlight/intel_backlight/brightness
 
