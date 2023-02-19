@@ -37,12 +37,7 @@ int main(){
 
     bat_perc_len = getl(bat_perc);
 
-    if (bat_perc_len == 3)
-        indeks = 10;
-    else if (bat_perc_len == 2)
-        indeks = (bat_perc / 10) % 10;
-    else 
-        indeks = 0;
+    indeks = bat_perc / 10;
 
     fajl = fopen("/sys/class/power_supply/BAT0/status", "r");
    
