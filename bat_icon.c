@@ -2,19 +2,9 @@
 #include <stdlib.h>
 #include <string.h>
 
-
-static int getl(int number){
-    int l = 1;
-    while(number > 9){
-        l++;
-        number /= 10;
-    }
-    return l;
-}
-
 int main(){
 
-    int bat_perc, bat_perc_len;
+    int bat_perc;
     
     char batterry_icon[][11] =          {"󱃍","󰁺", "󰁺", "󰁼", "󰁽","󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"};
  /* char batterry_icon_charging[][11] = {"󰢟","󰢜", "󰂆", "󰂇", "󰂈","󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"};*/
@@ -34,8 +24,6 @@ int main(){
     fscanf(fajl, "%d", &bat_perc);
     
     fclose(fajl);
-
-    bat_perc_len = getl(bat_perc);
 
     indeks = bat_perc / 10;
 
