@@ -26,6 +26,8 @@ int main(){
     fclose(fajl);
 
     indeks = bat_perc / 10;
+    if(bat_perc > 100)
+        indeks = 10;
 
     fajl = fopen("/sys/class/power_supply/BAT0/status", "r");
    
