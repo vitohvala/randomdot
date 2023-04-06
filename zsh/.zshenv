@@ -11,3 +11,4 @@ export XDG_DATA_HOME="$HOME/.local/share"
 export GNUPGHOME="$HOME/.local/share/gnupg"
 export XINITRC="$HOME/.config/X11/xinitrc"
 export WGETRC="$XDG_CONFIG_HOME/wgetrc"
+export BROWSER=/usr/bin/firefox
