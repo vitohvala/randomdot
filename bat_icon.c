@@ -10,15 +10,15 @@ int main(){
  /* char batterry_icon_charging[][11] = {"󰢟","󰢜", "󰂆", "󰂇", "󰂈","󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"};*/
     char bolt[] = "󱐋";
 
-    char indeks, * char_to_find, status_ch[20];
+    char indeks, status_ch[20];
 
     FILE *fajl;
 
     fajl = fopen("/sys/class/power_supply/BAT0/capacity", "r");
 
     if(fajl == NULL){
-        perror("Nije moguce otvoriti file /sys/class/power_supply/BAT0/capacity\nError: ");
-        return (-1);
+        perror("Error");
+        return (1);
     }
 
     fscanf(fajl, "%d", &bat_perc);
@@ -32,30 +32,17 @@ int main(){
     fajl = fopen("/sys/class/power_supply/BAT0/status", "r");
    
      if(fajl == NULL){
-        perror("Nije moguce otvoriti file /sys/class/power_supply/BAT0/capacity\nError: ");
-        return (-1);
+        perror("Error");
+        return (1);
     }
 
-    
-    while (fscanf(fajl,"%99[^\n] ", status_ch) == 1){
-         
-        char_to_find = status_ch;
-        
-        while(*char_to_find != 0){
-            char_to_find++;
-        }
-        
-        char_to_find--;
-        
-        if(*char_to_find == '5'){
-            printf("%s\n", status_ch); 
-        }
+    if(fgets(status_ch, 20, fajl) == NULL){
+        perror("Error");
+        fclose(fajl);
+        return 1;
     }
-
+    status_ch[strcspn(status_ch, "\n")] = '\0';
     fclose(fajl);
-
-
-//    (!(strcmp(status_ch, "Charging"))) ? puts(batterry_icon_charging[indeks]) : puts(batterry_icon[indeks]);
 
     if(!(strcmp(status_ch, "Charging"))){
         strcat(batterry_icon[indeks], bolt);    
