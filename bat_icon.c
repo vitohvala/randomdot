@@ -18,6 +18,7 @@ int main(){
 
     if(fajl == NULL){
         perror("Error");
+        fclose(fajl);
         return (1);
     }
 
@@ -33,6 +34,7 @@ int main(){
    
      if(fajl == NULL){
         perror("Error");
+        fclose(fajl);
         return (1);
     }
 
